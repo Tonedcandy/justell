@@ -46,7 +46,9 @@
     <p class=title is-4>{{ post.data.title }}</p>
     <p class=subtitle>{{ post.data.author.first_name }} {{ post.data.author.last_name }}</p>
     <div v-html="post.data.body"></div>
-
+    <div class="comment my-4">
+      <vue-disqus shortname="community-blog" :identifier="getPost.slug" :url="'http://localhost:8080/blog/${getPost.slug}'"></vue-disqus>
+    </div>
     <router-link
       v-if="post.meta.previous_post"
       :to="/blog/ + post.meta.previous_post.slug"

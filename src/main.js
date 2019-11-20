@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
+import VueDisqus from 'vue-disqus'
 Vue.use(Buefy)
+Vue.use(VueDisqus)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
