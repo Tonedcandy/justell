@@ -26,8 +26,6 @@
     style() {
       return {
         margin: '20px',
-        display: 'flex',
-        'flex-direction': 'rows'
         
       }
     },
@@ -108,7 +106,7 @@
 </nav> -->
       <!-- <h1>{{ page_title }}</h1> -->
       <!-- Create `v-for` and apply a `key` for Vue. Here we are using a combination of the slug and index. -->
-      <div class="columns is-mutiline is-gapless ">
+      <div class="columns is-multiline is-gapless ">
       
       <div
         v-for="(post,index) in posts"

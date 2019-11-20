@@ -48,6 +48,9 @@
      <figure class="image">
         <img :src="post.data.featured_image">
       </figure>
+
+      
+
     <div v-html="post.data.body">
 
     </div>
@@ -66,5 +69,9 @@
     >
       {{ post.meta.next_post.title }}
     </router-link>
+    <div class="comment my-4">
+      <vue-disqus shortname="community-blog" :identifier="getPost.slug" :url="'http://localhost:8080/blog/${getPost.slug}'"></vue-disqus>
+    </div>
   </div>
+  
 </template>
