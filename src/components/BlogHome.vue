@@ -13,7 +13,7 @@
       getPosts() {
         butter.post.list({
           page: 1,
-          page_size: 10
+          page_size: 12
         }).then(res => {
           this.posts = res.data.data
         })
@@ -26,8 +26,17 @@
     style() {
       return {
         margin: '20px',
+        display: 'flex',
+        'flex-direction': 'rows'
         
       }
+    },
+    cardBehaviour(){
+      return{
+        display: 'flex',
+        'flex-direction': 'column'
+      }
+
     }
   }
 
@@ -99,18 +108,18 @@
 </nav> -->
       <!-- <h1>{{ page_title }}</h1> -->
       <!-- Create `v-for` and apply a `key` for Vue. Here we are using a combination of the slug and index. -->
-      <div class="columns is-multiline is-gapless ">
+      <div class="columns is-mutiline is-gapless ">
       
       <div
         v-for="(post,index) in posts"
         :key="post.slug + '_' + index"
-        class=" column is-one-quarter"
+        class=" column is-one-quarter " 
       >
         <router-link :to="'/blog/' + post.slug">
         
           <article class="media" :style="style">
          
-          <div class="card ">
+          <div class="card">
           <div class="card-image">
             <figure class="image">
               <!-- Bind results using a `:` -->
