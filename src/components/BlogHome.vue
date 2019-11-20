@@ -1,12 +1,13 @@
 <script>
   import { butter } from '@/buttercms'
-
+import {VueMasonryPlugin} from 'vue-masonry';
   export default {
     name: 'blog-home',
     data() {
       return {
         page_title: 'Blog',
-        posts: []
+        posts: [],
+        windowWidth: window.innerWidth
       }
     },
     methods: {
@@ -26,16 +27,25 @@
     style() {
       return {
         margin: '20px',
+        'margin-right':'0px',
+        width: '355px',
+        padding: '0px'
+      
+
         
       }
     },
     cardBehaviour(){
       return{
-        display: 'flex',
-        'flex-direction': 'column'
+        width: '80px'
       }
 
-    }
+    },
+     mounted() {
+            window.onresize = () => {
+                this.windowWidth = window.innerWidth
+            }
+        }
   }
 
     
@@ -106,16 +116,16 @@
 </nav> -->
       <!-- <h1>{{ page_title }}</h1> -->
       <!-- Create `v-for` and apply a `key` for Vue. Here we are using a combination of the slug and index. -->
-      <div class="columns is-multiline is-gapless ">
+      <div v-masonry="containerId" transition-duration="0.3s" item-selector=".item" >
       
-      <div
+      <div v-masonry-tile class="item" 
         v-for="(post,index) in posts"
         :key="post.slug + '_' + index"
-        class=" column is-one-quarter " 
+        
       >
         <router-link :to="'/blog/' + post.slug">
         
-          <article class="media" :style="style">
+          <article class="media" :style="style" >
          
           <div class="card">
           <div class="card-image">

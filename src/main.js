@@ -6,6 +6,8 @@ import router from './router'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
 import VueDisqus from 'vue-disqus' 
+import {VueMasonryPlugin} from 'vue-masonry';
+Vue.use(VueMasonryPlugin)
 Vue.use(Buefy)
 Vue.use(VueDisqus) 
 Vue.config.productionTip = false

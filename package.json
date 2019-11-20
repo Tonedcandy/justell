@@ -13,6 +13,7 @@
     "buefy": "^0.8.6",
     "vue": "^2.5.2",
     "vue-disqus": "^3.0.5",
+    "vue-masonry": "^0.11.8",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
